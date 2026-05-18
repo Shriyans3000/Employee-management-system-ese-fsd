@@ -30,7 +30,7 @@ const AddEmployee = ({ token }) => {
         experience: Number(formData.experience)
       };
 
-      await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/employees`, payload, {
+      await axios.post(`${import.meta.env.VITE_API_URL || 'https://employee-management-system-ese.onrender.com'}/api/employees`, payload, {
         headers: { Authorization: `Bearer ${token}` }
       });
       

@@ -10,8 +10,8 @@ const Dashboard = ({ token }) => {
   const fetchEmployees = async (search = '') => {
     try {
       const url = search 
-        ? `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/employees/search?department=${search}`
-        : `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/employees`;
+        ? `${import.meta.env.VITE_API_URL || 'https://employee-management-system-ese.onrender.com'}/api/employees/search?department=${search}`
+        : `${import.meta.env.VITE_API_URL || 'https://employee-management-system-ese.onrender.com'}/api/employees`;
         
       const res = await axios.get(url, {
         headers: { Authorization: `Bearer ${token}` }
@@ -33,7 +33,7 @@ const Dashboard = ({ token }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/employees/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL || 'https://employee-management-system-ese.onrender.com'}/api/employees/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       fetchEmployees(searchTerm);

@@ -12,7 +12,7 @@ const AIRecommendations = ({ token }) => {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const res = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/employees`, {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL || 'https://employee-management-system-ese.onrender.com'}/api/employees`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setEmployees(res.data);
@@ -40,7 +40,7 @@ const AIRecommendations = ({ token }) => {
     setRecommendation('');
 
     try {
-      const res = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/ai/recommend`, {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL || 'https://employee-management-system-ese.onrender.com'}/api/ai/recommend`, {
         employeeIds: selectedIds
       }, {
         headers: { Authorization: `Bearer ${token}` }

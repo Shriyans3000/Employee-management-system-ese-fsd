@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Sparkles, Loader } from 'lucide-react';
 
@@ -16,7 +16,7 @@ const AIRecommendations = ({ token }) => {
           headers: { Authorization: `Bearer ${token}` }
         });
         setEmployees(res.data);
-      } catch (err) {
+      } catch {
         setError('Failed to fetch employees');
       }
     };
@@ -46,7 +46,7 @@ const AIRecommendations = ({ token }) => {
         headers: { Authorization: `Bearer ${token}` }
       });
       setRecommendation(res.data.recommendation);
-    } catch (err) {
+    } catch {
       setError('Failed to fetch AI recommendation');
     } finally {
       setLoading(false);

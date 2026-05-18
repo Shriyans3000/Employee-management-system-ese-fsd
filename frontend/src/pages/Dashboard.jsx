@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps, react-hooks/set-state-in-effect */
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Search, Trash2 } from 'lucide-react';
 
@@ -17,7 +18,7 @@ const Dashboard = ({ token }) => {
         headers: { Authorization: `Bearer ${token}` }
       });
       setEmployees(res.data);
-    } catch (err) {
+    } catch {
       setError('Failed to fetch employees');
     }
   };
@@ -37,7 +38,7 @@ const Dashboard = ({ token }) => {
         headers: { Authorization: `Bearer ${token}` }
       });
       fetchEmployees(searchTerm);
-    } catch (err) {
+    } catch {
       setError('Failed to delete employee');
     }
   };

@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #f4f4f0;
+    background-image: radial-gradient(#000000 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: #000000;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-weight: 600;
+  }
+}
+
+@layer components {
+  .brutal-card {
+    @apply bg-white border-4 border-black p-6;
+    box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+  }
+  
+  .brutal-btn {
+    @apply border-4 border-black font-bold px-6 py-2 transition-all active:translate-x-1 active:translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:active:translate-x-0 disabled:active:translate-y-0;
+    background-color: #fcee0a;
+    box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+  }
+  .brutal-btn:active:not(:disabled) {
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+  }
+  
+  .brutal-btn-pink {
+    @apply brutal-btn;
+    background-color: #ff90e8;
+  }
+  
+  .brutal-btn-blue {
+    @apply brutal-btn;
+    background-color: #90c2ff;
+  }
+
+  .brutal-btn-green {
+    @apply brutal-btn;
+    background-color: #bbf089;
+  }
+
+  .brutal-input {
+    @apply w-full border-4 border-black px-4 py-2 focus:outline-none focus:ring-0 transition-colors;
+    box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+  }
+  .brutal-input:focus {
+    background-color: rgba(252, 238, 10, 0.2);
+  }
+
+  .brutal-badge {
+    @apply border-2 border-black bg-white px-3 py-1 font-bold text-xs uppercase tracking-wider;
+    box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+  }
+}
